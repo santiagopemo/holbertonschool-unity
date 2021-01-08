@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public Text healthText;
     public Text winLoseText;
     public Image winLoseBG;
+    private Joystick joystick;
+    public bool tiltControl;
+    public Button TiltButton;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +24,30 @@ public class PlayerController : MonoBehaviour
         score = 0;
         health = 5;
         rb = GetComponent<Rigidbody>();
+        joystick = FindObjectOfType<Joystick>();
+        tiltControl = false;
+    }
+
+    public void SetTiltControl()
+    {
+        if (tiltControl)
+        {
+            tiltControl = false;
+            TiltButton.GetComponent<Image>().color = Color.white;
+        }
+        else
+        {
+            tiltControl = true;
+            TiltButton.GetComponent<Image>().color = Color.green;
+        }
     }
 
     void FixedUpdate()
     {
         MovePlayer();
+        MovePlayerJoystick();
+        if (tiltControl)
+            MovePlayerTilt();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -51,8 +73,23 @@ public class PlayerController : MonoBehaviour
     }
 
     void MovePlayer()
+    { 
+        Vector3 movement;
+        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        rb.AddForce(movement * speed);
+    }
+    void MovePlayerJoystick()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 movement;
+        movement = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+        rb.AddForce(movement * speed);
+    }
+    void MovePlayerTilt()
+    {
+        Vector3 movement;
+        movement = Input.acceleration;
+        movement = Quaternion.Euler(90, 0, 0) * movement;
+        movement.y = 0;
         rb.AddForce(movement * speed);
     }
 
@@ -86,6 +123,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene("maze");
     }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("menu");
+    }
 
     // Update is called once per frame
     void Update()
@@ -99,7 +140,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("menu");
+            LoadMenu();
         }
     }
 }
