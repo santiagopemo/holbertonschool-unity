@@ -1,4 +1,8 @@
-# 
+# 0x05. Unity - Assets: Models, Textures
+## Assets
+The realization of this project was possible, thanks to the following assets:
+* [Skyboxes: Farland Skies - Cloudy Crown](https://assetstore.unity.com/packages/2d/textures-materials/sky/farland-skies-cloudy-crown-60004)
+* [Models: Kenney's Nature Pack Extended](https://intranet.hbtn.io/rltoken/BYHZEB1i-sI1-GsnUpatbw)
 ## Resources :books:
 ### Read or watch:
 
