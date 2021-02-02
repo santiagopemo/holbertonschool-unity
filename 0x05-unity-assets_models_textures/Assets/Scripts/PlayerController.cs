@@ -24,23 +24,7 @@ public class PlayerController : MonoBehaviour
     void Update() {
         float xDisplacement = Input.GetAxis("Horizontal");
         float zDisplacement = Input.GetAxis("Vertical");
-        // if (controller.isGrounded) 
-        // {
-        //     moveDirection = new Vector3(xDisplacement, 0, zDisplacement);
-        //     moveDirection = transform.TransformDirection(moveDirection);
-        //     moveDirection *= speed;
-        //     if (Input.GetKeyDown(KeyCode.Space))
-        //     {
-        //         moveDirection.y = jumpSpeed; 
-        //     }           
-        // }
-        // else
-        // {
-        //     moveDirection = new Vector3(xDisplacement * speed, moveDirection.y, zDisplacement * speed);
-        //     moveDirection = transform.TransformDirection(moveDirection);
-        // }
-        // moveDirection.y += gravity * Time.deltaTime;
-        // controller.Move(moveDirection * Time.deltaTime);
+        
         if (controller.isGrounded) 
         {
             moveDirection = new Vector3(xDisplacement * speed, 0, zDisplacement * speed);
