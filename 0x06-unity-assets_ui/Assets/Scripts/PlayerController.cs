@@ -15,13 +15,18 @@ public class PlayerController : MonoBehaviour
     float turnSmoothVelocity;
     private Vector3 initialPosition;
 
+    public PauseMenu pauseMenu;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         initialPosition = transform.position;
         initialPosition.y += 20;
+        pauseMenu = GetComponent<PauseMenu>();
     }
     void Update() {
+        if (pauseMenu.paused)
+            return;
         float xDisplacement = Input.GetAxis("Horizontal");
         float zDisplacement = Input.GetAxis("Vertical");
         

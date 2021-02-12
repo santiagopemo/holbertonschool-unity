@@ -10,13 +10,21 @@ public class CameraController : MonoBehaviour
 
     private bool mouseDown = false;
 
+    public bool isInverted;
+
+    Quaternion rotation;
+
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        // Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Confined;
         player = GameObject.Find("Player");
         offset = transform.position - player.transform.position;
+        if (PlayerPrefs.HasKey("InvertYToggle"))
+            isInverted = PlayerPrefs.GetInt("InvertYToggle") == 0 ? false : true;
+        else
+            isInverted = false;
     }
 
     // Update is called once per frame
@@ -27,7 +35,12 @@ public class CameraController : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
             mouseDown = false;
         if (mouseDown)
-            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.left) * offset;
+        {
+            if (isInverted)
+                offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed * -1, Vector3.right) * offset;
+            else
+                 offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * offset;
+        }
         transform.position = player.transform.position + offset;
         transform.LookAt(player.transform.position);        
     }
