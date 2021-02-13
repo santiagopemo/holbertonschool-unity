@@ -4,44 +4,49 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Vector3 offset;
     private GameObject player;
-    public float turnSpeed = 4.0f;
-
     private bool mouseDown = false;
-
     public bool isInverted;
+    private Transform parentTransform;
+    private Vector3 localRotation;
+    public float mouseSensitivity = 5f;
+    public float orbitDampening = 15f;
 
-    Quaternion rotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Cursor.visible = false;
-        // Cursor.lockState = CursorLockMode.Confined;
         player = GameObject.Find("Player");
-        offset = transform.position - player.transform.position;
         if (PlayerPrefs.HasKey("InvertYToggle"))
             isInverted = PlayerPrefs.GetInt("InvertYToggle") == 0 ? false : true;
         else
             isInverted = false;
+        parentTransform = transform.parent;
+        // Set Initials conditions if there are wrong in editor
+        parentTransform.position = player.transform.position;
+        transform.position = new Vector3(0f, 2.5f, -6.25f);
+        transform.rotation = Quaternion.Euler(9, 0, 0);
     }
-
-    // Update is called once per frame
     void LateUpdate()
     {
+        parentTransform.position = player.transform.position;
         if (Input.GetMouseButtonDown(1))
             mouseDown = true;
         if (Input.GetMouseButtonUp(1))
             mouseDown = false;
         if (mouseDown)
         {
-            if (isInverted)
-                offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed * -1, Vector3.right) * offset;
-            else
-                 offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * offset;
+            if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+            {
+                localRotation.x += Input.GetAxis("Mouse X") * mouseSensitivity;
+                if (isInverted)
+                    localRotation.y -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+                else
+                    localRotation.y += Input.GetAxis("Mouse Y") * mouseSensitivity;
+                localRotation.y = Mathf.Clamp(localRotation.y, -10, 80);
+            }
         }
-        transform.position = player.transform.position + offset;
-        transform.LookAt(player.transform.position);        
+        Quaternion QT = Quaternion.Euler(localRotation.y, localRotation.x, 0);
+        parentTransform.rotation = Quaternion.Lerp(parentTransform.rotation, QT, orbitDampening); 
     }
 }
