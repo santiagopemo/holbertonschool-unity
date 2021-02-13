@@ -7,6 +7,8 @@ public class Timer : MonoBehaviour
 {
     public Text timerText;
     private float startTime;
+
+    public GameObject winCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +25,11 @@ public class Timer : MonoBehaviour
         string decimals = ((int)(t * 100) % 100).ToString("D2"); 
 
         timerText.text = minutes + ":" + seconds + "." +decimals;        
+    }
+
+    public void Win()
+    {
+        winCanvas.transform.Find("FinalTime").GetComponent<Text>().text = timerText.text;
+        timerText.text = "";
     }
 }

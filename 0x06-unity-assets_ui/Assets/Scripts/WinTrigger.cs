@@ -7,17 +7,19 @@ public class WinTrigger : MonoBehaviour
 {
     public GameObject player;
     public Text timerText;
+    public GameObject winCanvas;
     // Start is called before the first frame update
     void Start()
     {
          player = FindObjectOfType<PlayerController>().gameObject;
-         timerText = GameObject.Find("TimerCanvas").transform.Find("TimerText").GetComponent<Text>();
     }
 
     void OnTriggerEnter(Collider other)
     {
         player.GetComponent<Timer>().enabled = false;
-        timerText.color = Color.green;
-        timerText.fontSize = 60;
+        winCanvas.SetActive(true);
+        player.GetComponent<PauseMenu>().enabled = false;
+        player.GetComponent<Timer>().Win();
+        Time.timeScale = 0;
     }
 }

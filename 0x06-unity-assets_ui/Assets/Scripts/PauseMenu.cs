@@ -11,8 +11,8 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        // Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Confined;
         paused = false;
         Time.timeScale = 1;
         pauseCanvas.transform.Find("RestartButton").gameObject.GetComponent<Button>().onClick.AddListener(Restart);
@@ -35,8 +35,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        // Cursor.visible = true;
+        // Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
         pauseCanvas.SetActive(true);
         paused = true;
@@ -47,8 +47,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         pauseCanvas.SetActive(false);
         paused = false;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        // Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void Restart()
