@@ -43,7 +43,7 @@ public class CameraController : MonoBehaviour
                     localRotation.y -= Input.GetAxis("Mouse Y") * mouseSensitivity;
                 else
                     localRotation.y += Input.GetAxis("Mouse Y") * mouseSensitivity;
-                localRotation.y = Mathf.Clamp(localRotation.y, -10, 80);
+                localRotation.y = Mathf.Clamp(localRotation.y, -60, 80);
             }
         }
         Quaternion QT = Quaternion.Euler(localRotation.y, localRotation.x, 0);
