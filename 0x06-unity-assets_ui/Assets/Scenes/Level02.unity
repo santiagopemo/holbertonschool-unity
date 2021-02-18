@@ -797,6 +797,9 @@ MonoBehaviour:
   speed: 3
   targetPosition: {x: 14, y: 0, z: 32.2}
   initialPosition: {x: 0, y: 0, z: 0}
+  waitSeconds: 0
+  waitStart: 0
+  startTrigger: 0
   forward: 1
 --- !u!1 &158883235 stripped
 GameObject:
@@ -8737,6 +8740,9 @@ MonoBehaviour:
   speed: 3
   targetPosition: {x: -40.1, y: 27.7, z: 45}
   initialPosition: {x: 0, y: 0, z: 0}
+  waitSeconds: 0
+  waitStart: 0
+  startTrigger: 0
   forward: 1
 --- !u!1 &1372946433 stripped
 GameObject:
@@ -10283,6 +10289,9 @@ MonoBehaviour:
   speed: 3
   targetPosition: {x: -12, y: 0, z: 15}
   initialPosition: {x: 0, y: 0, z: 0}
+  waitSeconds: 0
+  waitStart: 0
+  startTrigger: 0
   forward: 1
 --- !u!4 &1703695165 stripped
 Transform:
@@ -10798,6 +10807,9 @@ MonoBehaviour:
   speed: 3
   targetPosition: {x: 14, y: 3.96, z: 143.94}
   initialPosition: {x: 0, y: 0, z: 0}
+  waitSeconds: 0
+  waitStart: 0
+  startTrigger: 0
   forward: 1
 --- !u!1 &1759193035
 GameObject:
