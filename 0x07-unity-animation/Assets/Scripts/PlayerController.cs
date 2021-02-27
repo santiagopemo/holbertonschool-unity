@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
             transform.position = initialPosition;
             transform.rotation = initialRotation;
             animator.SetBool("isFalling", true);
-            isFalling = true;
         }
     }
 }
