@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = initialPosition;
             animator.SetBool("isFalling", true);
+            isFalling = true;
         }
     }
 }
