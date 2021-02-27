@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     private Vector3 initialPosition;
+    private Quaternion initialRotation;
 
     public PauseMenu pauseMenu;
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         initialPosition = transform.position;
+        initialRotation = transform.rotation;
         initialPosition.y += 50;
         pauseMenu = GetComponent<PauseMenu>();
         animator = transform.Find("ty").GetComponent<Animator>();
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < -30)
         {
             transform.position = initialPosition;
+            transform.rotation = initialRotation;
             animator.SetBool("isFalling", true);
             isFalling = true;
         }
