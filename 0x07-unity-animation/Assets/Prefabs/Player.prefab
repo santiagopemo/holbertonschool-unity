@@ -135,6 +135,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   turnSmoothTime: 0.1
   pauseMenu: {fileID: 0}
+  animator: {fileID: 0}
+  isFalling: 0
 --- !u!114 &3617328670912701510
 MonoBehaviour:
   m_ObjectHideFlags: 0
