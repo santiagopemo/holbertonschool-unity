@@ -1,4 +1,4 @@
-# ty - Animation
+# 0x07. Unity - Animation
 ## Resources :books:
 ### Read or watch:
 
