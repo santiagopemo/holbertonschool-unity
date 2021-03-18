@@ -12,8 +12,6 @@ public class TyController : MonoBehaviour
     public AudioSource grassStep;
     public AudioSource rockLanding;
     public AudioSource grassLanding;
-
-    [SerializeField]
     private float groundDistance = 1f;
     private bool isRock = true;
 
