@@ -25,8 +25,6 @@ public class MainMenuBGM : MonoBehaviour
 
     void ChangeActiveScene(Scene current, Scene next)
     {
-        print(current.name);
-        print(next.name);
         if (next.name != "Options" && next.name != "MainMenu")
         {
             if (this != null)

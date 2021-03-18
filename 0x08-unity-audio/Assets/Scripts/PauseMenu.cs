@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public AudioMixerSnapshot pausedSnapshot;
     public AudioMixerSnapshot unpausedSnapshot;
+    private float initailBGMVolume;
     void Start()
     {
         // Cursor.visible = false;
@@ -22,6 +23,13 @@ public class PauseMenu : MonoBehaviour
         pauseCanvas.transform.Find("MenuButton").gameObject.GetComponent<Button>().onClick.AddListener(MainMenu);
         pauseCanvas.transform.Find("OptionsButton").gameObject.GetComponent<Button>().onClick.AddListener(Options);
         pauseCanvas.transform.Find("ResumeButton").gameObject.GetComponent<Button>().onClick.AddListener(Resume);
+        unpausedSnapshot.TransitionTo(0.01f);
+        SceneManager.activeSceneChanged += ChangeActiveScene;
+    }
+
+    void ChangeActiveScene(Scene current, Scene next)
+    {
+        Time.timeScale = 1;
         unpausedSnapshot.TransitionTo(0.01f);
     }
 

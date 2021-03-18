@@ -11,6 +11,13 @@ public class MasterMixerManager : MonoBehaviour
     void Start()
     {
         if (PlayerPrefs.HasKey("dbBGMVolume"))
+        {
             masterMixer.SetFloat("BGMVolume", PlayerPrefs.GetFloat("dbBGMVolume"));
+        }
+            
+        if (PlayerPrefs.HasKey("dbSFXVolume"))
+        {
+            masterMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("dbSFXVolume"));
+        }
     }
 }

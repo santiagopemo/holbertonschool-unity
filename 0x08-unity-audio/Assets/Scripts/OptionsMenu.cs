@@ -10,7 +10,10 @@ public class OptionsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     private Toggle invertYAxis;
     public Slider BGMSlider;
-    private float initialVolume;
+    public Slider SFXSlider;
+    private float initialVolumeBGM;
+    private float initialVolumeSFX;
+
     void Start()
     {
         transform.Find("ApplyButton").gameObject.GetComponent<Button>().onClick.AddListener(Apply);
@@ -18,13 +21,13 @@ public class OptionsMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("InvertYToggle"))
             invertYAxis.isOn = PlayerPrefs.GetInt("InvertYToggle") == 0 ? false : true;
         SetBGMSlider();
-        
+        SetSFXSlider();
     }
     public void Back()
     {
+        SetBGMVolume(initialVolumeBGM);
         if (PlayerPrefs.HasKey("previous-scene"))
-            SceneManager.LoadScene(PlayerPrefs.GetString("previous-scene"));
-        SetBGMVolume(initialVolume);
+            SceneManager.LoadScene(PlayerPrefs.GetString("previous-scene"));        
     }
 
     public void Apply()
@@ -34,6 +37,7 @@ public class OptionsMenu : MonoBehaviour
         else
             PlayerPrefs.SetInt("InvertYToggle", 0);
             PlayerPrefs.SetFloat("dbBGMVolume", LinearToDecibel(BGMSlider.value));
+            PlayerPrefs.SetFloat("dbSFXVolume", LinearToDecibel(SFXSlider.value));
         if (PlayerPrefs.HasKey("previous-scene"))
             SceneManager.LoadScene(PlayerPrefs.GetString("previous-scene"));
     }
@@ -50,7 +54,22 @@ public class OptionsMenu : MonoBehaviour
         audioMixer.GetFloat("BGMVolume", out dbVolume);
         float linearVolume = DecibelToLinear(dbVolume);
         BGMSlider.value = linearVolume;
-        initialVolume = linearVolume;
+        initialVolumeBGM = linearVolume;
+    }
+
+    public void SetSFXVolume(float linearVulome)
+    {
+        float dbVolume = LinearToDecibel(linearVulome);
+        audioMixer.SetFloat("SFXVolume", dbVolume);
+    }
+
+    public void SetSFXSlider()
+    {
+        float dbVolume;
+        audioMixer.GetFloat("SFXVolume", out dbVolume);
+        float linearVolume = DecibelToLinear(dbVolume);
+        SFXSlider.value = linearVolume;
+        initialVolumeSFX = linearVolume;
     }
 
     private float LinearToDecibel(float linear)
