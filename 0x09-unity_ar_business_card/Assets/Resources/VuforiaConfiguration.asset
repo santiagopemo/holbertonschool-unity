@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2067402452, guid: 4bc5fd733b147194692297d23f623541, type: 3}
+  m_Name: VuforiaConfiguration
+  m_EditorClassIdentifier: 
+  vuforia:
+    vuforiaLicenseKey: AaAhHq7/////AAABmX04NZ4duk+pjU444GquXzaBE9qY+0PtF2Mu49LUTvZbglnb4PF/fQpt43/myjbCEBv28MvWKCGhNOCB0ucPJby0BSbyGfqSKL3PZvbB9sNCfVSXW+hz5ymHFRvE2DNsggwfFP0y+ax/E3uMKQNUUeKOo3oSw+eWauWAqle2s3CGSaN5p1ycX/4orKd1JJt47n8N8MjB2GtWoVXDWBQcFUiNiIgPZT11IWIv6EuNFiElx6Tr2hEdZiHm97r3zaPjdJXPmO2i5CHlsA+eANMXhZNKqq+8xi6ywr0NWH0McbLfcgTGQkQyoiAIQkBcUks32ChJdzt52dWtuZzTXWe/RooVxbFdhQR+dSNYCZRjQI9U
+    ufoLicenseKey: QVoxMzVWMy8vLy8vQUFBQUtPQm9NYUdMUDA4MHBTNElWOWx2bFRjanAzanpwVkJsZVhSekZYaGJ5UHJIczR0UGttdVl5YndsZS90em4vaFRMZWhnK0s2M1Jpc1huK3NWL3ZKWkR5NlhHNjNnbk8rQ0NVYk55YWVSMWJNanlreDV1Z1JxR0VKckRNeFRiV010STM0OG8vU1NzYkVoWG1zRmtVTzJGMkJka2ZiMXEzVFpONXc3SEdJditFbDBRZ1YzaWZSbThLVG8vWUZweDQxcm42VnBFY3l2Qy9PaGVwZG9VRDlaSXcyVThGNXZrNG81bS9BbDVrV3lXcmk5MHQwYnhJSXl4NE4xZnZqWlVKS3dCVlNvOStucjI1b2s0YjhITlJqcGJDeW54U2JCYTVGUTFkOE9XbVNYbjNiZFlRWVlLU3JaTFVUSHdOc0ZoelUwKzQwUUlzbUFycEd2RkJmSEczSDRURVhtb2pBN1FDREJnMFpwWFpGYnVMbmM=
+    delayedInitialization: 0
+    cameraDeviceModeSetting: -1
+    maxSimultaneousImageTargets: 1
+    maxSimultaneousObjectTargets: 1
+    virtualSceneScaleFactor: 30
+    useDelayedLoadingObjectTargets: 0
+    modelTargetRecoWhileExtendedTracked: 1
+    shareRecordingsInITunes: 0
+    version: 9.8.5
+    eulaAcceptedVersions: '{"Values":["8.1","9.8","0.0","8.5","9.5"]}'
+  database:
+    disableModelExtraction: 0
+  shaders:
+    depthMaskShader: {fileID: 4800000, guid: 1ce7eb78425fb1540838bc9d5d95857a, type: 3}
+  videoBackground:
+    numDivisions: 2
+    videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a,
+      type: 3}
+    unlitShader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+    videoBackgroundEnabled: 1
+  deviceTracker:
+    autoStartTracker: 1
+    arcoreRequirement: 1
+    autoImportArcore: 1
+  playmode:
+    mSequencePath: 
+    playModeType: 0
+  webcam:
+    renderTextureLayer: 30
+  packageInformation:
+    ARFoundationVersion: 
