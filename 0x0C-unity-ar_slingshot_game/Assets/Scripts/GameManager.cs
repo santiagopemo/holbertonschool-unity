@@ -198,6 +198,7 @@ public class GameManager : MonoBehaviour
     {
         leaderBoardButton.SetActive(false);
         PlaneSelected(selectedPlane);
+        EndingSound.Stop();
     }
     public void QuitGame()
     {

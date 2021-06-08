@@ -65,14 +65,14 @@ public class Ammo : MonoBehaviour
         AmmoHit();
     }
 
-    void OnCollisionEnter(Collision other)
-    {
+    // void OnCollisionEnter(Collision other)
+    // {
         
-        if (other.gameObject.GetComponent<Target>() != null && shooted)
-        {
-            OnAmmoHitTarget?.Invoke(other.gameObject.GetComponent<Target>().ID);
-            other.gameObject.GetComponent<Target>().ReceiveDamage(100, shootOrigin);
-            AmmoHit();
-        }
-    }
+    //     if (other.gameObject.GetComponent<Target>() != null && shooted)
+    //     {
+    //         OnAmmoHitTarget?.Invoke(other.gameObject.GetComponent<Target>().ID);
+    //         other.gameObject.GetComponent<Target>().ReceiveDamage(100, shootOrigin);
+    //         AmmoHit();
+    //     }
+    // }
 }
