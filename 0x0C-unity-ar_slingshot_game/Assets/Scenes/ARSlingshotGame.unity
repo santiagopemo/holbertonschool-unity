@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5bf5703eaa6500d429535e627668bde0, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -572,6 +572,7 @@ MonoBehaviour:
   EndingSound: {fileID: 971311118}
   planeSelectedSound: {fileID: 1263259000}
   leaderBoard: {fileID: 1449503018}
+  PlaneOcclusionMaterial: {fileID: 2100000, guid: fa853e1a751ea1c4b944b74ce2e463aa, type: 2}
 --- !u!4 &223974228
 Transform:
   m_ObjectHideFlags: 0
@@ -2811,7 +2812,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.05
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -3549,7 +3550,7 @@ GameObject:
   - component: {fileID: 1878631622}
   - component: {fileID: 1878631626}
   m_Layer: 0
-  m_Name: AR Session Origin
+  m_Name: AR Plane Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

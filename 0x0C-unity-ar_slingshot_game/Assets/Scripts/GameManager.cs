@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
     [Header("Scripts")]
     public Leaderboard leaderBoard;
 
+    [Header("Materials")]
+    public Material PlaneOcclusionMaterial;
+
     // private variables
     int totalPoints = 0;
 
@@ -85,12 +88,12 @@ public class GameManager : MonoBehaviour
             if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
             {
                 ARRaycastHit hit = hits[0];
-                selectedPlane =  planeManager.GetPlane(hit.trackableId);
-                // selectedPlane.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0);
-                selectedPlane.GetComponent<MeshRenderer>().enabled = false;
+                selectedPlane =  planeManager.GetPlane(hit.trackableId);                
                 selectedPlane.GetComponent<LineRenderer>().positionCount = 0;
-                selectedPlane.gameObject.layer = LayerMask.NameToLayer("Default");
-                // selectedPlane.GetComponent<Renderer>().sortingOrder = 0;
+
+                selectedPlane.GetComponent<Renderer>().material = PlaneOcclusionMaterial;
+                // SetMaterialTransparent(selectedPlane);
+                
                 foreach(ARPlane plane in planeManager.trackables)
                 {
                     if (plane != selectedPlane)
@@ -102,6 +105,21 @@ public class GameManager : MonoBehaviour
                 selectPlaneCanvas.SetActive(false);
                 OnPlaneSelected?.Invoke(selectedPlane);
             }
+        }
+    }
+
+    void SetMaterialTransparent(ARPlane plane)
+    {        
+        foreach (Material material in plane.GetComponent<Renderer>().materials)
+        {
+            material.SetFloat("_Mode", 2);
+            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            material.SetInt("_ZWrite", 0);
+            material.DisableKeyword("_ALPHATEST_ON");
+            material.DisableKeyword("_ALPHABLEND_ON");
+            // material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            material.renderQueue = 3000;
         }
     }
     void PlanesFound(ARPlanesChangedEventArgs args)

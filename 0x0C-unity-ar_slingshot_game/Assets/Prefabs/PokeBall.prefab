@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5192448951887480424}
   - component: {fileID: 598470634327822572}
   - component: {fileID: 6637699045248564464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PokeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1414227430545341474}
   - component: {fileID: 619681325300881773}
   - component: {fileID: 5040488058770585631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pokemanball_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

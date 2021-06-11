@@ -6,8 +6,8 @@ public class SlingShot : MonoBehaviour
 {
     public GameObject ammoPrefab;
     public GameObject currentAmmo = null;
-    int forceMultiplier = 800;
-    int forceFordwardScalar = 5;
+    int forceMultiplier = 600; // 800
+    int forceFordwardScalar = 4; // 5
     public int AmmoLeft {get; set;}
 
     public bool isDrag;

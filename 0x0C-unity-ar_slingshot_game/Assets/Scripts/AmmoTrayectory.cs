@@ -34,7 +34,7 @@ public class AmmoTrayectory : MonoBehaviour
         int linePoints = numPoints;
         lineRenderer.positionCount = numPoints;
         lineRenderer.SetPosition(0, slingShot.currentAmmo.transform.position);
-        lineRenderer.material = ammoMaterial;
+        // lineRenderer.material = ammoMaterial;
 
         Vector3 force = slingShot.GetShootForce();
         Vector3 startingPosition = slingShot.currentAmmo.transform.position;
@@ -52,7 +52,7 @@ public class AmmoTrayectory : MonoBehaviour
 
             if(Physics.OverlapSphere(newPosition, slingShot.currentAmmo.GetComponent<SphereCollider>().radius * slingShot.currentAmmo.transform.localScale.y, CollidableLayers).Length > 0)
             {
-                lineRenderer.material = ammoHitMaterial;
+                // lineRenderer.material = ammoHitMaterial;
                 lineRenderer.positionCount = i;
                 break;
             }
