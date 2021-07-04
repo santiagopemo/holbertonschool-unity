@@ -1,4 +1,4 @@
-# Holbertonschool-Unity
+# Holbertonschool Unity
 ![](https://unity3d.com/files/images/ogimg.jpg)
 ## Description
 Unity is a multiplatform video game engine created by Unity Technologies. It is available as a development platform for Microsoft Windows, Mac OS, Linux. The development platform has compilation support with different types of platforms. This repository contains some projects from holberton school's virtual and augmented reality specialization program.
