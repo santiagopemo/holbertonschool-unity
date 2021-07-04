@@ -29,5 +29,25 @@ This repository contains projects on Unity Game Engine, The projects cover:
 * SaderGraph
 * and more...
 
+## Projects
+1. [0x00-unity-user_interface](./0x00-unity-user_interface)
+2. [0x01-unity_concepts](./0x01-unity_concepts)
+3. [0x04-unity_publishing](./0x04-unity_publishing)
+4. [0x05-unity-assets_models_textures](./0x05-unity-assets_models_textures)
+5. [0x06-unity-assets_ui](./0x06-unity-assets_ui)
+6. [0x07-unity-animation](./0x07-unity-animation)
+7. [0x08-unity-audio](./0x08-unity-audio)
+8. [0x09-unity_ar_business_card](./0x09-unity_ar_business_card)
+9. [0x0C-unity-ar_slingshot_game](./0x0C-unity-ar_slingshot_game)
+10. [0x0D-unity-shadergraph](./0x0D-unity-shadergraph)
+11. [2D-clone](./2D-clone)
+
+## Author
+
+### Santiago Peña Mosquera  
+Mechatronic engineer and student of software development in holberton school, lover of building new things from scratch, that's why my passion for programming, starting from an empty sheet and turning it into a solution for real problems.  
+<a href="https://www.linkedin.com/in/santiago-pe%C3%B1a-mosquera-abaa20196/" target="_blank">LinkedIn</a>
+<a href="https://twitter.com/santiagopemo" target="_blank">Twitter</a>
+
 
 
