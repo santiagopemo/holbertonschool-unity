@@ -23,7 +23,8 @@
 * What is the difference between surface, vertex and fragment shaders
 * What is UV mapping
 * What is vertex animation
-* Requirements for Unity projects
+## Requirements :white_check_mark:
+### General
 * A README.md file, at the root of the folder of the project
 * Use Unity’s default .gitignore in your holbertonschool-unity directory
 * Push the entire project folder 0x0D-unity-shaders to your repo
