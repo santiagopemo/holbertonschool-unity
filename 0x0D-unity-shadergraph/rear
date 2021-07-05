@@ -1,0 +1,188 @@
+0x0D. Unity - ShaderGraph
+ Specializations > AR/VR > Unity
+ By Carrie Ybay, Software Engineer at Holberton School
+ Ongoing project - started 06-21-2021, must end by 07-09-2021 (in 4 days) - you're done with 0% of tasks.
+ Manual QA review must be done (request it when you are done with the project)
+Readme
+Watch: Shaders 101
+A Gentle Introduction to Shaders
+Watch: Intro to ShaderGraph
+Getting Started with ShaderGraph
+ShaderGraph Documentation
+Unity Manual: Unity’s Rendering Pipeline
+Unity Manual: Asset packages
+You must use Unity 2019.4 LTS or later for this project. You will be using Unity’s ShaderGraph tool to create different shaders and effects. You are not expected to exactly replicate the examples given – you have the creative freedom to design your shaders to look cartoon-y, realistic, pixelated, etc., but a non-technical person must be able to look at your shader example and recognize it as glowing or as water, etc.
+
+ShaderGraph has the benefit of being a visual tool so that you can see exactly how each node, property, and mathematical function affects your shader. In order to fully take advantage of ShaderGraph’s capabilities, you must familiarize yourself with the functions of its nodes.
+
+This project will be different in that you will not be required to provide a build as the last task. Instead, you will be exporting an Asset package containing your shaders. For each task’s manual review, your shaders will be applied to different GameObjects and evaluated on their appearance and performance.
+
+References
+
+Unity Manual
+Unity Manual: Material Charts
+Watch: Shaders Case Studies
+What you should learn
+At the end of this project you are expected to be able to explain to anyone, without the help of Google:
+
+What is rendering
+What is a render pipeline
+What is Unity’s Scriptable Render Pipeline
+What is a shader
+What is ShaderGraph and how is it used
+How to setup a new project that utilizes ShaderGraph
+What is the difference between surface, vertex and fragment shaders
+What is UV mapping
+What is vertex animation
+Requirements for Unity projects
+A README.md file, at the root of the folder of the project
+Use Unity’s default .gitignore in your holbertonschool-unity directory
+Push the entire project folder 0x0D-unity-shaders to your repo
+Quiz questions
+Show
+
+Tasks
+0. Glow up
+mandatory
+Create a new project called 0x0D-unity-shadergraph. In the Package Manager, enable the Universal Render Pipeline. Create a new Universal Render Pipeline Asset and drop it into your project’s Graphics settings. This will enable you to utilize ShaderGraph.
+
+Create a material and shader that makes an untextured 3D GameObject glow around the edges.
+
+You must be able to change the following properties of the shader in the Inspector window:
+
+Base color
+Glow color
+Glow strength
+You are not limited to having only these properties, you may have as many properties and nodes as you need to achieve the effect.
+
+
+
+Repo:
+
+GitHub repository: holbertonschool-unity
+Directory: 0x0D-unity-shadergraph
+File: glow.shadergraph, glow.mat
+ 
+1. Pulse
+mandatory
+Based on the previous shader, create a new shader where the glow pulses / fades in and out.
+
+You must be able to change the following properties of the shader in the Inspector window:
+
+Base color
+Glow color
+Minimum glow strength
+Maximum glow strength
+Pulse frequency
+You are not limited to having only these properties, you may have as many properties and nodes as you need to achieve the effect.
+
+
+
+Repo:
+
+GitHub repository: holbertonschool-unity
+Directory: 0x0D-unity-shadergraph
+File: glow_animated.shadergraph, glow_animated.mat
+ 
+2. Mr. Stark, I don't feel so good
+mandatory
+Create a shader that simulates a disintegrating or dissolving effect.
+
+You must be able to change the following properties of the shader in the Inspector window:
+
+Base color
+Disintegration / dissolving speed
+Scale of disintegrating fragments
+You are not limited to having only these properties, you may have as many properties and nodes as you need to achieve the effect.
+
+
+
+Repo:
+
+GitHub repository: holbertonschool-unity
+Directory: 0x0D-unity-shadergraph
+File: disintegrate.shadergraph, disintegrate.mat
+ 
+3. Iceman
+mandatory
+Create a shader that makes an object look like ice. The object should be partially transparent.
+
+You must be able to change the following properties of the shader in the Inspector window:
+
+Base color
+You are not limited to having only these properties, you may have as many properties and nodes as you need to achieve the effect.
+
+ 
+
+Repo:
+
+GitHub repository: holbertonschool-unity
+Directory: 0x0D-unity-shadergraph
+File: ice.shadergraph, ice.mat
+ 
+4. Hey Cortana, what's UV positioning?
+mandatory
+Create a shader that applies a flickering hologram effect to an object. You must use a Texture in this shader.
+
+You must be able to change the following properties of the shader in the Inspector window:
+
+Base color
+Texture
+You are not limited to having only these properties, you may have as many properties and nodes as you need to achieve the effect.
+
+
+
+Repo:
+
+GitHub repository: holbertonschool-unity
+Directory: 0x0D-unity-shadergraph
+File: hologram.shadergraph, hologram.mat
+ 
+5. Sine of the sea
+mandatory
+Create an animated shader that simulates the appearance of water.
+
+You must be able to change the following properties of the shader in the Inspector window:
+
+Color(s)
+Wave size
+Wave frequency
+You are not limited to having only these properties, you may have as many properties and nodes as you need to achieve the effect.
+
+
+
+Repo:
+
+GitHub repository: holbertonschool-unity
+Directory: 0x0D-unity-shadergraph
+File: water.shadergraph, water.mat
+ 
+6. Same day delivery
+mandatory
+Export all your shaders into an Asset Package.
+
+Your package hierarchy should look like this:
+
+Materials
+glow.mat
+glow_animated.mat
+etc.
+Shaders
+glow.shader
+glow_animated.shader
+etc.
+Textures
+<Texture Files>
+Your package should not contain any extra files, scenes, or dependencies, only the shader and material files.
+
+Name the package 0x0D-unity-shaders. Upload it to Dropbox or Google Drive and provide the link below:
+
+Add URLs here:
+
+ https://drive.google.com/drive/folders/1c5ip0eXlJ__yNeFRT1bF_1CZ04klxhrY?usp=sharing
+Repo:
+
+GitHub repository: holbertonschool-unity
+Directory: 0x0D-unity-shadergraph
+File: 0x0D-unity-shaders.unitypackage
+
