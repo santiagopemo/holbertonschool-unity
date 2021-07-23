@@ -36,11 +36,11 @@ This repository contains projects on Unity Game Engine, The projects cover:
 4. [0x05-unity-assets_models_textures](./0x05-unity-assets_models_textures)
 5. [0x06-unity-assets_ui](./0x06-unity-assets_ui)
 6. [0x07-unity-animation](./0x07-unity-animation)
-7. [0x08-unity-audio](./0x08-unity-audio)
-8. [0x09-unity_ar_business_card](./0x09-unity_ar_business_card)
-9. [0x0C-unity-ar_slingshot_game](./0x0C-unity-ar_slingshot_game)
-10. [0x0D-unity-shadergraph](./0x0D-unity-shadergraph)
-11. [2D-clone](./2D-clone)
+7. [2D-clone](./2D-clone)
+8. [0x08-unity-audio](./0x08-unity-audio)
+9. [0x09-unity_ar_business_card](./0x09-unity_ar_business_card)
+10. [0x0C-unity-ar_slingshot_game](./0x0C-unity-ar_slingshot_game)
+11. [0x0D-unity-shadergraph](./0x0D-unity-shadergraph)
 
 ## Author
 
