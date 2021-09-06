@@ -21,9 +21,7 @@ public class SlingShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // shootSound = GetComponent<AudioSource>();
         AmmoLeft = 100;
-        // Reload();
     }
     public void Reload()
     {
@@ -47,7 +45,6 @@ public class SlingShot : MonoBehaviour
             currentAmmo.GetComponent<Ammo>().shootOrigin = currentAmmo.transform.position;       
             currentAmmo = null;
             shootSound.Play();
-            // StartCoroutine(DelayedReload(1));
         }
     }
     public void Clear()
